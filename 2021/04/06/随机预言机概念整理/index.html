@@ -87,7 +87,7 @@
 <meta property="og:description" content="算起来，这应该是我的第一篇专业相关的博文。最近在读前向安全的论文，文中涉及到随机预言机的概念，在此进行思路梳理。 概念随机预言机是一个预言（黑箱），对任何输入都回传一个真正均匀随机的输出。不过对重复的输入，RO每次都会回传一模一样的输出。">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-04-06T08:29:36.000Z">
-<meta property="article:modified_time" content="2021-04-06T09:14:24.839Z">
+<meta property="article:modified_time" content="2021-04-17T12:42:02.099Z">
 <meta property="article:author" content="petrichorwq">
 <meta property="article:tag" content="密码学">
 <meta property="article:tag" content="随机预言机">
@@ -385,9 +385,9 @@
 <ol>
 <li><p>RO一开始维护一张空表，表有两列，一列是输入，一列是输出。</p>
 </li>
-<li><p>如果访问者第一次输入为x，则RO均匀随机从${0,1}^L$中选出一个值O(x)，把x记录在表内。</p>
+<li><p>如果访问者第一次输入为x，则RO均匀随机从{0,1}${}^L$中选出一个值O(x)，把x记录在表内。</p>
 </li>
-<li><p>对于第二个及之后的访问y，如果y没有在输入列中出现，则RO均匀随机从${0,1}^L$中选出一个值O(y)。否则，从表中取出O(y)，输出。</p>
+<li><p>对于第二个及之后的访问y，如果y没有在输入列中出现，则RO均匀随机从{0,1}${}^L$中选出一个值O(y)。否则，从表中取出O(y)，输出。</p>
 </li>
 </ol>
 <p><strong>英文版本：</strong></p>
@@ -449,8 +449,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2021/03/23/%E7%9D%A1%E8%A7%89%E5%AD%A6%E5%AF%BC%E8%AE%BA/" rel="next" title="睡觉学导论">
-                <i class="fa fa-chevron-left"></i> 睡觉学导论
+              <a href="/2021/03/11/Dual/" rel="next" title="Dual机制论文详析">
+                <i class="fa fa-chevron-left"></i> Dual机制论文详析
               </a>
             
           </div>
@@ -542,7 +542,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -553,7 +553,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -564,7 +564,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -922,6 +922,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 

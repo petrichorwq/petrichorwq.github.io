@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="算法,遍历,刷题," />
+  <meta name="keywords" content="算法,刷题,遍历," />
 
 
 
@@ -87,11 +87,11 @@
 <meta property="og:description" content="概念双指针主要用来遍历数组。几种花样：  滑动窗口：同一数组俩指针，方向相同且不会相交。 搜索排序数组：同一数组俩指针，方向相反。">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-04-13T11:22:54.000Z">
-<meta property="article:modified_time" content="2021-04-13T11:30:33.187Z">
+<meta property="article:modified_time" content="2021-04-18T03:35:37.270Z">
 <meta property="article:author" content="petrichorwq">
 <meta property="article:tag" content="算法">
-<meta property="article:tag" content="遍历">
 <meta property="article:tag" content="刷题">
+<meta property="article:tag" content="遍历">
 <meta name="twitter:card" content="summary">
 
 
@@ -382,15 +382,13 @@
 </ol>
 <a id="more"></a>
 
-<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><h4 id="167-Two-Sum-II-Input-array-is-sorted"><a href="#167-Two-Sum-II-Input-array-is-sorted" class="headerlink" title="167. Two Sum II - Input array is sorted"></a>167. Two Sum II - Input array is sorted</h4><p><strong>题目</strong>：在有序数组中找两个数，使他们的和与target相等。<br><strong>解法</strong>：两指针，一左一右。和偏大，右指针左移；和偏小，左指针右移。<br><strong>代码</strong>：略。<br><strong>时间复杂度</strong>：O(n)。  </p>
-<h4 id="135-Candy-Hard"><a href="#135-Candy-Hard" class="headerlink" title="135. Candy (Hard)"></a>135. Candy (Hard)</h4><p><strong>题目</strong>：给一对小孩分糖，每个小孩有一个优先级。一人至少有一颗糖，Children with a <strong>higher</strong> rating get more candies than their neighbors。<br><strong>解法</strong>：两个方向遍历。在每次遍历中只考虑并更新相邻一侧的大小关系。<br><strong>代码</strong>：两个方向遍历。先从左开始，确保比左边孩子优先级高的小孩糖也比左边小孩多。再从右开始， 确保比右边孩子优先级高的小孩糖也比右边小孩多（不要管本来就糖多的小孩）。<br><strong>时间复杂度</strong>：O(n)。   </p>
-<h4 id="435-Non-overlapping-Intervals-M"><a href="#435-Non-overlapping-Intervals-M" class="headerlink" title="435. Non-overlapping Intervals (M)"></a>435. Non-overlapping Intervals (M)</h4><p><strong>题目</strong>：一堆区间，找最少删掉几个区间就能使剩下的不重叠。<br><strong>解法</strong>：优先保留结尾小且与前一个区间不重叠的区间。<br><strong>代码</strong>：把区间按尾部从小到大排序。遍历，和前面有重叠的不要。<br><strong>时间复杂度</strong>：O(nlogn)。  </p>
-<h4 id="605-Can-Place-Flowers-E"><a href="#605-Can-Place-Flowers-E" class="headerlink" title="605. Can Place Flowers (E)"></a>605. Can Place Flowers (E)</h4><p><strong>题目</strong>：种花。一个数组，0是坑，1是花。坑两边也都是坑的才能栽花。问能种多少花。<br><strong>解法</strong>：能种的就种，遇见三个坑就种。<br><strong>代码</strong>：遍历，遇见三个0就种，但注意边界值。<br><strong>时间复杂度</strong>：O(n)。<br><strong>他山之石</strong>：  </p>
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><h4 id="167-Two-Sum-II-Input-array-is-sorted-E"><a href="#167-Two-Sum-II-Input-array-is-sorted-E" class="headerlink" title="167. Two Sum II - Input array is sorted (E)"></a>167. Two Sum II - Input array is sorted (E)</h4><p><strong>题目</strong>：在有序数组中找两个数，使他们的和与target相等。<br><strong>解法</strong>：两指针，一左一右。和偏大，右指针左移；和偏小，左指针右移。<br><strong>代码</strong>：略。<br><strong>时间复杂度</strong>：O(n)。  </p>
+<h4 id="88-Merge-Sorted-Array-E"><a href="#88-Merge-Sorted-Array-E" class="headerlink" title="88. Merge Sorted Array (E)"></a>88. Merge Sorted Array (E)</h4><p><strong>题目</strong>：将两个排序数组合并至数组1中，要求结构仍有序<br><strong>解法</strong>：</p>
 <ol>
-<li>1后面必是0。i+=2。遇到0后，如果恰好是最后一个格子，或者下个格子不是1，果断填充；否则，这回跳三格。</li>
-<li>防御性编程：数组前后各加一个0，防溢出。</li>
+<li>将数组2拷贝到1中，调用sort。 O((m+n)log(m+n))</li>
+<li><strong>逆序双指针。</strong><br>两指针从后向前遍历，将大的放在num1的后面，避免了num1中元素被覆盖，也免于开辟新空间。代码：除了对数组1，2进行定位的两指针，还有一个用于定位插入位置的指针pos。将较大的插入到pos，pos不断前移，直到某个数组遍历完。如果数组2没完，直接移过来（此时pos前都是有序的数组1中内容）；数组1没完，啥都不用干。O（m+n）</li>
 </ol>
-<p>还有两道，电脑没电了。。。回见。。。</p>
+<h4 id="142-Linked-List-Cycle-II-M"><a href="#142-Linked-List-Cycle-II-M" class="headerlink" title="142. Linked List Cycle II (M)"></a>142. Linked List Cycle II (M)</h4><p><strong>题目</strong>：一个可能有环的图，判断有没有环，有环的话找到环的起始点。<br><strong>解法</strong>：快慢双指针。 Floyd判圈法：slow 和 fast起始位置在链表的开头。每次 fast 前进两步，slow 前进一步。如果 fast 可以走到尽头，那么说明没有环路；如果 fast可以无限走下去，那么说明一定有环路，且一定存 在一个时刻 slow和 fast相遇。当 slow和 fast第一次相遇时，我们将 fast重新移动到链表开头，并 让 slow和 fast每次都前进一步。当 slow和 fast第二次相遇时，相遇的节点即为环路的开始点。<br><strong>代码</strong>： 太漂亮了呜呜呜。<br>do-else循环里先判定fast和fast-&gt;next是否为空，空，返回无环；非空，fast跳一格，slow跳两格；两指针相遇时终止。fast移到head，while slow和 fast未相遇，两指针各前进一步。相遇后返回任一指针。<br><strong>时间复杂度</strong>：O(n)。   </p>
 
       
     </div>
@@ -410,9 +408,9 @@
           
             <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"># 算法</a>
           
-            <a href="/tags/%E9%81%8D%E5%8E%86/" rel="tag"># 遍历</a>
-          
             <a href="/tags/%E5%88%B7%E9%A2%98/" rel="tag"># 刷题</a>
+          
+            <a href="/tags/%E9%81%8D%E5%8E%86/" rel="tag"># 遍历</a>
           
         </div>
       
@@ -434,6 +432,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/04/24/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" rel="prev" title="二分查找">
+                二分查找 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -514,7 +516,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -525,7 +527,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -536,7 +538,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -578,7 +580,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE"><span class="nav-number">2.</span> <span class="nav-text">题目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#167-Two-Sum-II-Input-array-is-sorted"><span class="nav-number">2.1.</span> <span class="nav-text">167. Two Sum II - Input array is sorted</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#135-Candy-Hard"><span class="nav-number">2.2.</span> <span class="nav-text">135. Candy (Hard)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#435-Non-overlapping-Intervals-M"><span class="nav-number">2.3.</span> <span class="nav-text">435. Non-overlapping Intervals (M)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#605-Can-Place-Flowers-E"><span class="nav-number">2.4.</span> <span class="nav-text">605. Can Place Flowers (E)</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE"><span class="nav-number">2.</span> <span class="nav-text">题目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#167-Two-Sum-II-Input-array-is-sorted-E"><span class="nav-number">2.1.</span> <span class="nav-text">167. Two Sum II - Input array is sorted (E)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#88-Merge-Sorted-Array-E"><span class="nav-number">2.2.</span> <span class="nav-text">88. Merge Sorted Array (E)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#142-Linked-List-Cycle-II-M"><span class="nav-number">2.3.</span> <span class="nav-text">142. Linked List Cycle II (M)</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -894,6 +896,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
