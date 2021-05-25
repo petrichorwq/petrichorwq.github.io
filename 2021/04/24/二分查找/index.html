@@ -387,6 +387,7 @@
 <li>mid值和某边的边界值重合，导致区间无法更新，陷入死循环。（似乎是left=mid导致的？）</li>
 </ol>
 <a id="more"></a>
+
 <p>时间复杂度基本都是（logn），所以之后就不标了，特殊的会批注一下。</p>
 <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><h4 id="455-sqrt-x-Easy"><a href="#455-sqrt-x-Easy" class="headerlink" title="455 sqrt(x) (Easy)"></a>455 sqrt(x) (Easy)</h4><p><strong>题目</strong>：给一个数，求开方，向下取整。<br><strong>解法</strong>：牛顿迭代法/二分查找。<br><strong>代码</strong>：<br>牛顿迭代法：借助导数公式计算。<br>二分查找。通过比较mid和x/mid，移动边界值l or r。<br>此处需注意不能直接求平方，易溢出。  </p>
 <h4 id="34-Find-First-and-Last-Position-of-Element-in-Sorted-Array-M"><a href="#34-Find-First-and-Last-Position-of-Element-in-Sorted-Array-M" class="headerlink" title="34. Find First and Last Position of Element in Sorted Array (M)"></a>34. Find First and Last Position of Element in Sorted Array (M)</h4><p><strong>题目</strong>：找target在数组中第一次和最后一次出现的位置，未出现则返回{-1.-1}。<br><strong>解法</strong>：手动用修改后的二分查找（微调）实现C++的upper_bound和lower_bound。<br><strong>代码</strong>：<br>注意点第三四点</p>
@@ -396,7 +397,8 @@
 <pre><code>if(nums[l] == nums[r])&#123;
     l++;
 &#125;
-</code></pre><h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p>【Leetcode】旋转数组系列总结 - Elaine的文章 - 知乎<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/75179013">https://zhuanlan.zhihu.com/p/75179013</a></p>
+</code></pre>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p>【Leetcode】旋转数组系列总结 - Elaine的文章 - 知乎<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/75179013">https://zhuanlan.zhihu.com/p/75179013</a></p>
 
       
     </div>

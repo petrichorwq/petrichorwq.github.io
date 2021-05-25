@@ -509,10 +509,7 @@
         
           <h3 id="文献概述"><a href="#文献概述" class="headerlink" title="文献概述"></a>文献概述</h3><h4 id="文章标题"><a href="#文章标题" class="headerlink" title="文章标题"></a>文章标题</h4><p>《Forward Secure Dynamic Searchable Symmetric Encryption with Eicient Updates》</p>
 <h4 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h4><p>Kee Sung Kim，Minkyu Kim，Dongsoo Lee，Je Hong Park and Woo-Hwan Kim</p>
-<h4 id="题目解析"><a href="#题目解析" class="headerlink" title="题目解析"></a>题目解析</h4><p>本文的题目是：有效更新的前向安全动态可搜索对称加密。先对题目中的几个名次进行解析。</p>
-<h5 id="有效更新"><a href="#有效更新" class="headerlink" title="有效更新"></a>有效更新</h5><p>更新操作包含增删两项，有效更新意指有效的删除操作，这在本方案中得到了实现。从前的方案中的删除操作依循这样的逻辑：在数据库中增加一项数据文件的删除信息，当客户端再次检索时，服务器在搜索时得知该删除信息并返回给客户端该信息已删除的消息。这没有达真实的删除效果，而且数据库中的文件将会越删越多，对存储空间来说是一个很大的劣势。本方案则对数据进行了彻底的删除，在删除后进行检索时，不会浪费对已删除数据的无效检索，因此真正达到了越删越少的效果。</p>
-<h5 id="前向安全"><a href="#前向安全" class="headerlink" title="前向安全"></a>前向安全</h5><p>本方案采用了实时更新密钥的方法来保证在更新数据后新密钥的泄露对旧密钥不会造成影响。</p>
-<h5 id="动态搜索可对称加密"><a href="#动态搜索可对称加密" class="headerlink" title="动态搜索可对称加密"></a>动态搜索可对称加密</h5><p>从前的许多静态SSE方案拥有固定数量的关键字/文件对，不便于进行增删操作，因此可拓展性较差。本方案则支持动态更新，对于文件的上传和删除进行了实时有效的操作。</p>
+<h4 id="题目解析"><a href="#题目解析" class="headerlink" title="题目解析"></a>题目解析</h4><p>本文的题目是：有效更新的前向安全动态可搜索对称加密。先对题目中的几个名词进行解析。</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2021/05/11/Dual/#more" rel="contents">
