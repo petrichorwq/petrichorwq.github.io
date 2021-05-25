@@ -381,12 +381,13 @@
 <li>搜索排序数组：同一数组俩指针，方向相反。</li>
 </ol>
 <a id="more"></a>
-
 <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><h4 id="167-Two-Sum-II-Input-array-is-sorted-E"><a href="#167-Two-Sum-II-Input-array-is-sorted-E" class="headerlink" title="167. Two Sum II - Input array is sorted (E)"></a>167. Two Sum II - Input array is sorted (E)</h4><p><strong>题目</strong>：在有序数组中找两个数，使他们的和与target相等。<br><strong>解法</strong>：两指针，一左一右。和偏大，右指针左移；和偏小，左指针右移。<br><strong>代码</strong>：略。<br><strong>时间复杂度</strong>：O(n)。  </p>
 <h4 id="88-Merge-Sorted-Array-E"><a href="#88-Merge-Sorted-Array-E" class="headerlink" title="88. Merge Sorted Array (E)"></a>88. Merge Sorted Array (E)</h4><p><strong>题目</strong>：将两个排序数组合并至数组1中，要求结构仍有序<br><strong>解法</strong>：</p>
 <ol>
-<li>将数组2拷贝到1中，调用sort。 O((m+n)log(m+n))</li>
+<li>将数组2拷贝到1中，调用sort。 O((m+n)log(m+n))<ol>
 <li><strong>逆序双指针。</strong><br>两指针从后向前遍历，将大的放在num1的后面，避免了num1中元素被覆盖，也免于开辟新空间。代码：除了对数组1，2进行定位的两指针，还有一个用于定位插入位置的指针pos。将较大的插入到pos，pos不断前移，直到某个数组遍历完。如果数组2没完，直接移过来（此时pos前都是有序的数组1中内容）；数组1没完，啥都不用干。O（m+n）</li>
+</ol>
+</li>
 </ol>
 <h4 id="142-Linked-List-Cycle-II-M"><a href="#142-Linked-List-Cycle-II-M" class="headerlink" title="142. Linked List Cycle II (M)"></a>142. Linked List Cycle II (M)</h4><p><strong>题目</strong>：一个可能有环的图，判断有没有环，有环的话找到环的起始点。<br><strong>解法</strong>：快慢双指针。 Floyd判圈法：slow 和 fast起始位置在链表的开头。每次 fast 前进两步，slow 前进一步。如果 fast 可以走到尽头，那么说明没有环路；如果 fast可以无限走下去，那么说明一定有环路，且一定存 在一个时刻 slow和 fast相遇。当 slow和 fast第一次相遇时，我们将 fast重新移动到链表开头，并 让 slow和 fast每次都前进一步。当 slow和 fast第二次相遇时，相遇的节点即为环路的开始点。<br><strong>代码</strong>： 太漂亮了呜呜呜。<br>do-else循环里先判定fast和fast-&gt;next是否为空，空，返回无环；非空，fast跳一格，slow跳两格；两指针相遇时终止。fast移到head，while slow和 fast未相遇，两指针各前进一步。相遇后返回任一指针。<br><strong>时间复杂度</strong>：O(n)。   </p>
 
@@ -516,7 +517,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -527,7 +528,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -538,7 +539,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

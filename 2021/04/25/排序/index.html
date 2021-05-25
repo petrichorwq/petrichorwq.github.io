@@ -382,7 +382,6 @@
 <p>快速排序：取轴分割，小的在左，大的在右。分治，两边各自递归调用函数。时间复杂度$O(nlogn)$，空间复杂度O(1)。</p>
 <p>归并排序：先分割到不能再分，然后再合并前半段和后半段（两有序数组并为一数组）。注意，需要再建一个空数组用于归并过程中存值。时间复杂度$O(nlogn)$，空间复杂度O(n)。</p>
 <a id="more"></a>
-
 <h3 id="基础排序算法代码"><a href="#基础排序算法代码" class="headerlink" title="基础排序算法代码"></a>基础排序算法代码</h3><pre><code>#include&lt;cstdio&gt;
 #include&lt;algorithm&gt;
 //#include&lt;string&gt;
@@ -413,7 +412,7 @@ void bubbleSort(int* arr, int N)&#123;
 //                swap(arr[j-1], arr[j]);
 //        &#125;
 //    &#125;
-    
+
 // 逆向
 //    for(int i=0; i&lt;N; i++)&#123;
 //        for(int j=N-2; j&gt;=i; j--)&#123;
@@ -421,7 +420,7 @@ void bubbleSort(int* arr, int N)&#123;
 //                swap(arr[j+1], arr[j]);
 //        &#125;
 //    &#125;
-    
+
 // 改进
     int flag = 0;
     for(int i=0; i&lt;N; i++)&#123;
@@ -493,14 +492,14 @@ int main()&#123;
         cout &lt;&lt; arr[i] &lt;&lt; &#39; &#39;;
     &#125;
     cout &lt;&lt; endl;
-    
+
     // selectSort(arr, N);
     // bubbleSort(arr, N);
     // insertSort(arr, N);
     // quickSort(arr, 0, N);
     int* temp = new int[N];
     mergeSort(arr, 0, N, temp);
-    
+
     for(int i=0; i&lt;N; i++)&#123;
         cout &lt;&lt; arr[i] &lt;&lt; &#39; &#39;;
     &#125;
@@ -510,7 +509,6 @@ int main()&#123;
     return 0;
 &#125;
 </code></pre>
-
       
     </div>
     
@@ -637,7 +635,7 @@ int main()&#123;
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -648,7 +646,7 @@ int main()&#123;
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -659,7 +657,7 @@ int main()&#123;
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
