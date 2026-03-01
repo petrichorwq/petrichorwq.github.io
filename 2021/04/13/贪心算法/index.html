@@ -378,6 +378,7 @@
         <p>最近🐟给我发了本很好的刷题小册子，跟着在力扣上刷题。今天终于刷完了第一章——贪心算法。来自说自话地整理下思路。</p>
 <h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>贪心，文艺一点就是“但行好事，莫问前程”，通过不断地寻找局部最优解最终获得全局最优。但是使用贪心算法要有一个前提，无后效性，某个状态以后的过程不会影响以前的状态，只与当前状态有关。通俗点说，就是得确保你当前行的这件好事不会被之后做的事覆盖掉。</p>
 <a id="more"></a>
+
 <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><h4 id="455-assign-cookie-Easy"><a href="#455-assign-cookie-Easy" class="headerlink" title="455 assign cookie (Easy)"></a>455 assign cookie (Easy)</h4><p><strong>题目</strong>：给n个小孩分m个饼干，饼干大小大于小孩饥饿度的时候才ok，问最多能喂饱几个小孩。<br><strong>解法</strong>：最不饿的小孩最容易喂饱。从最不饿的小孩开始喂，从最小的饼干开始试着喂给他。<br><strong>代码</strong>：两次排序，同时遍历两数组。<br><strong>时间复杂度</strong>：排序O(mlogm+nlogn)，遍历O(m+n)，故O(mlogm+nlogn)。  </p>
 <h4 id="135-Candy-Hard"><a href="#135-Candy-Hard" class="headerlink" title="135. Candy (Hard)"></a>135. Candy (Hard)</h4><p><strong>题目</strong>：给一对小孩分糖，每个小孩有一个优先级。一人至少有一颗糖，Children with a <strong>higher</strong> rating get more candies than their neighbors。<br><strong>解法</strong>：两个方向遍历。在每次遍历中只考虑并更新相邻一侧的大小关系。<br><strong>代码</strong>：两个方向遍历。先从左开始，确保比左边孩子优先级高的小孩糖也比左边小孩多。再从右开始， 确保比右边孩子优先级高的小孩糖也比右边小孩多（不要管本来就糖多的小孩）。<br><strong>时间复杂度</strong>：O(n)。   </p>
 <h4 id="435-Non-overlapping-Intervals-M"><a href="#435-Non-overlapping-Intervals-M" class="headerlink" title="435. Non-overlapping Intervals (M)"></a>435. Non-overlapping Intervals (M)</h4><p><strong>题目</strong>：一堆区间，找最少删掉几个区间就能使剩下的不重叠。<br><strong>解法</strong>：优先保留结尾小且与前一个区间不重叠的区间。<br><strong>代码</strong>：把区间按尾部从小到大排序。遍历，和前面有重叠的不要。<br><strong>时间复杂度</strong>：O(nlogn)。  </p>
